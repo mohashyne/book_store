@@ -1,6 +1,5 @@
-// En src/components/NewBookForm.js
 import React, { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
+
 import PropTypes from 'prop-types';
 
 const NewBookForm = ({ onSubmit }) => {
