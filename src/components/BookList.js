@@ -1,31 +1,31 @@
-// En src/components/BookList.js
-import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from 'prop-types';
+// components/BookList.js
+import React, { useState } from 'react';
 import Book from './Book';
 
-const BookList = ({ books, onDelete }) => (
-  <div>
-    {books.map((book) => (
-      <Book
-        key={book.id}
-        title={book.title}
-        author={book.author}
-        onDelete={() => onDelete(book.id)}
-      />
-    ))}
-  </div>
-);
+const BookList = () => {
+  const [books, setBooks] = useState([
+    { id: 1, title: 'Book 1', author: 'Author 1' },
+    { id: 2, title: 'Book 2', author: 'Author 2' },
+    // Add more books here
+  ]);
 
-BookList.propTypes = {
-  books: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      author: PropTypes.string,
-    }),
-  ).isRequired,
-  onDelete: PropTypes.func.isRequired,
+  const handleDelete = (id) => {
+    setBooks(books.filter((book) => book.id !== id));
+  };
+
+  return (
+    <div>
+      <h1>Book List</h1>
+      {books.map((book) => (
+        <Book
+          key={book.id}
+          title={book.title}
+          author={book.author}
+          onDelete={() => handleDelete(book.id)}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default BookList;
