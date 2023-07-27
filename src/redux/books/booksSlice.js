@@ -1,18 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  books: JSON.parse(localStorage.getItem('books')) || [],
-};
+const initialState = [
+  {
+    item_id: 'item1',
+    title: 'Life is Short',
+    author: 'Ummah Zakiyyah',
+    category: 'Religion',
+  },
+  {
+    item_id: 'item2',
+    title: 'Hack the Hacker',
+    author: 'Thomas Robot',
+    category: 'Fiction',
+  },
+  {
+    item_id: 'item3',
+    title: 'The Great Deebaters',
+    author: 'Malcom X',
+    category: 'Literature',
+  },
+];
 
 const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
     addBook: (state, action) => {
-      state.books.push(action.payload);
+      state.push(action.payload);
     },
     removeBook: (state, action) => {
-      state.books = state.books.filter((book) => book.id !== action.payload.id);
+      const bookIdToRemove = action.payload.id;
+      return state.filter((book) => book.item_id !== bookIdToRemove);
     },
   },
 });

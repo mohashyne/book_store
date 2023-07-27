@@ -7,7 +7,7 @@ import Categories from './Categories';
 
 const Navigation = () => (
   <Router>
-    <nav className="bg-gray-800 py-4">
+    <nav className="bg-blue-800 py-4">
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="logo">
           <span className="text-white font-bold text-xl">Book Store</span>

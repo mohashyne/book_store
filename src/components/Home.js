@@ -1,10 +1,11 @@
 import React from 'react';
-import Book from './Book';
+import BookList from './BookList';
 
 export default function Home() {
   return (
     <>
-      <Book title="Sample Book" author="Sample Author" onDelete={() => {}} />
+      {/* <Book title="Sample Book" author="Sample Author" onDelete={() => {}} /> */}
+      <BookList />
     </>
   );
 }
