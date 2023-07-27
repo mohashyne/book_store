@@ -8,7 +8,7 @@ const Book = ({ title, author, onDelete }) => {
   const [isAdding, setIsAdding] = useState(false);
   const [newBook, setNewBook] = useState({ title: '', author: '' });
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.books.books);
+  const books = useSelector((state) => state.books);
 
   useEffect(() => {
     const storedBooks = JSON.parse(localStorage.getItem('books'));
