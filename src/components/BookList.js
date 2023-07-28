@@ -8,9 +8,8 @@ import {
 const BookList = () => {
   const appId = 'Xu8Mz8LlzkO78MLHCMqh';
   const {
-    books, loading, error, success, message,
+    books, loading, error, success,
   } = useSelector((state) => state.books);
-  console.log(books, loading, error, success, message);
   const dispatch = useDispatch();
 
   const [isAddDialogOpen, setAddDialogOpen] = useState(false);
