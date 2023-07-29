@@ -11,8 +11,8 @@ export default function Categories() {
   }, [dispatch]);
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="bg-pink-900 rounded-lg shadow-lg p-6">
+    <div className="flex justify-center items-center h-screen mt-5">
+      <div className="bg-gray-900 rounded-lg shadow-lg p-6">
         <h1 className="text-2xl font-bold mb-5 text-white">Welcome to the Categories Page</h1>
         <p className="text-white">
           Category Status:

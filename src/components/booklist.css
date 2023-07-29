@@ -1,0 +1,160 @@
+.circular {
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+
+.inner,
+.outer,
+.circle {
+  position: absolute;
+  z-index: 6;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+}
+
+.inner {
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+  background-color: #fff;
+  border-radius: 100%;
+}
+
+.circle {
+  z-index: 1;
+  box-shadow: none;
+}
+
+.numb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: #111;
+}
+
+.text-progress {
+  font-size: 1.6vw;
+  font-weight: 500;
+}
+
+.numb-title {
+  font-size: 1.1vw;
+  font-weight: 400;
+}
+
+@media (min-width: 1050px) {
+  .numb {
+    left: 150%;
+    transform: translate(0, -50%);
+  }
+}
+
+.bar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #dadada;
+  -webkit-border-radius: 100%;
+  clip: rect(0, 100px, 100px, 50px);
+}
+
+.progress {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 100%;
+  clip: rect(0, 50px, 100px, 0);
+}
+
+.progress,
+.dot span,
+.zero-dot span {
+  background: #307bbe;
+}
+
+.left.progress {
+  z-index: 1;
+  animation: left 4s linear both;
+}
+
+@keyframes left {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.bar.right {
+  z-index: 3;
+  transform: rotate(180deg);
+}
+
+.right.progress {
+  animation: right 4s linear both;
+  animation-delay: 4s;
+}
+
+@keyframes right {
+  100% {
+    transform: rotate(135deg);
+  }
+}
+
+.dot {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30%;
+  height: 10px;
+  margin-top: -5px;
+  animation: dot 8s linear both;
+  transform-origin: 0% 50%;
+}
+
+.zero-dot {
+  z-index: 100;
+  position: absolute;
+  top: 5px;
+  left: 55%;
+  height: 10px;
+  margin-top: -5px;
+  transform-origin: 0% 50%;
+}
+
+.zero-dot span,
+.dot span {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+@keyframes dot {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  50% {
+    transform: rotate(90deg);
+    z-index: 4;
+  }
+
+  100% {
+    transform: rotate(225deg);
+    z-index: 4;
+  }
+}
+
+.separator {
+  height: 7.5rem;
+  display: inline-block;
+  margin-left: 3rem;
+  background-color: #9f9f9f;
+}
